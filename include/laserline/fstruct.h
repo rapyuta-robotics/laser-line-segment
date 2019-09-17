@@ -7,16 +7,12 @@
 #include <string.h>
 #include <vector>
 
+// clang-format off
 #define PI 3.1415926535898
-#define t(a) a* PI / 180  //角度弧度转换
-
-#define threshold_a 6  //聚类倍数
-#define distance_point(a1, a2, b1, b2) sqrt((a1 - b1) * (a1 - b1) + (a2 - b2) * (a2 - b2))
-#define max(a, b) a > b ? a : b
-#define min(a, b) a < b ? a : b
+#define threshold_a 6 //聚类倍数
+// clang-format on
 
 //点信息
-
 typedef struct _POINT
 {
   double x;

@@ -12,17 +12,16 @@ laser_line_extraction
 #include <math.h>
 #include <stdio.h>
 
+// clang-format off
 //这些模块可以用自己的math.h头文件进行包含
 ////宏定义
 #define PI 3.1415926535898
-#define t(a) a* PI / 180  //角度弧度转换
-//识别模块定义
 #define threshold_a 6  //聚类倍数
-#define distance(a1, a2, b1, b2) sqrt((a1 - b1) * (a1 - b1) + (a2 - b2) * (a2 - b2))
-#define max(a, b) a > b ? a : b
+// clang-format on
 
 namespace line_feature
 {
+
 class LineFeature
 {
 public:
@@ -47,6 +46,12 @@ public:
   void set_seed_line_points(unsigned int);
 
 private:
+
+  static double distance_point(double a1, double a2, double b1, double b2)
+  {
+    return sqrt((a1 - b1) * (a1 - b1) + (a2 - b2) * (a2 - b2));
+  }
+
   //检测种子点，障碍物聚类的子函数
   // bool detectseed(PoinT );
   //障碍物检测，区域生长
